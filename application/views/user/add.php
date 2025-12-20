@@ -22,6 +22,12 @@
         <label for="email">Введите e-mail </label>
         <input type="text" class="form-control"  name="email" id="email" placeholder="адрес электропочты">
     </div>
+    <h5>Выберите роль</h5>
+    <select name="role">
+        <option value="admin">Администратор</option>
+        <option value="auth_user" selected>Авторизованный пользователь</option>
+        <option value="user">Пользователь</option>
+    </select><br>
     <input type="submit" class="btn btn-primary" name="saveNewUser" value="Сохранить">
     <input type="submit" class="btn" name="cancel" value="Назад">
 </form>
