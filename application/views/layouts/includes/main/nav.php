@@ -1,15 +1,9 @@
-
 <?php 
 use ItForFree\SimpleMVC\Config;
 use ItForFree\SimpleMVC\Router\WebRouter;
-
 $User = Config::getObject('core.user.class');
-
-
 //ppre($User->explainAccess("admin/adminusers/index"));
-
 ?>
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- Меню оформленное с помощью  twitter bootstrap -->
  <a class="navbar-brand" href="/" title="aka Самый Лучший Сайт ;)">SimpleMVC</a>
  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,4 +39,3 @@ $User = Config::getObject('core.user.class');
     </ul>
    </div>
 </nav>
-

@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 use application\assets\DemoJavascriptAsset;
 DemoJavascriptAsset::add();
 

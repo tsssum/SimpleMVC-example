@@ -1,8 +1,6 @@
-<?php 
+<?php
 use ItForFree\SimpleAsset\SimpleAssetManager;
 use application\assets\CustomCSSAsset;
-
-
 CustomCSSAsset::add();
 SimpleAssetManager::printCss();
 ?>

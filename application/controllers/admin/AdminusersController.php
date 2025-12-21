@@ -117,7 +117,7 @@ class AdminusersController extends \ItForFree\SimpleMVC\MVC\Controller
             
             $Adminusers = new UserModel();
             $deletedAdminusers = $Adminusers->getById($id);
-            $deleteAdminusersTitle = "Удаление статьи";
+            $deleteAdminusersTitle = "Удаление";
             
             $this->view->addVar('deleteAdminusersTitle', $deleteAdminusersTitle);
             $this->view->addVar('deletedAdminusers', $deletedAdminusers);

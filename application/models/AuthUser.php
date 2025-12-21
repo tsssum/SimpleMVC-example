@@ -36,4 +36,10 @@ class AuthUser extends User
         }
     }
 
+    public function logout(): true
+    {
+        $result = parent::logout();        
+        return $result;
+    }
+
 }

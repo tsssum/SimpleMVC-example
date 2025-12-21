@@ -2,7 +2,7 @@
 
 <form method="post" action="<?= \ItForFree\SimpleMVC\Router\WebRouter::link('login/login')?>">
     
-    <?php 
+    <?php
     if (!empty($_GET['auth'])) {
         echo "Неверное имя пользователя или пароль";
     }

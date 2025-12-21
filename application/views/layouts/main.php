@@ -1,9 +1,6 @@
-<?php 
+<?php
 use ItForFree\SimpleMVC\Config;
-
-
 $User = Config::getObject('core.user.class');
-
 ?>
 <!DOCTYPE html>
 <html>

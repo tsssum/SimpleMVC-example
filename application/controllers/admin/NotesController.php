@@ -13,7 +13,7 @@ class NotesController extends \ItForFree\SimpleMVC\MVC\Controller
 {
     
     public string $layoutPath = 'admin-main.php';
-    
+    private const MAX_NOTES_VIEW = 5;
     
     public function indexAction()
     {
@@ -22,6 +22,22 @@ class NotesController extends \ItForFree\SimpleMVC\MVC\Controller
         $noteId = $_GET['id'] ?? null;
         
         if ($noteId) { // если указан конктреный пользователь
+            if (!isset($_SESSION['notes_viewed'])) {
+                $_SESSION['notes_viewed'] = 0;
+            }
+            $_SESSION['notes_viewed']++;
+            
+            if ($_SESSION['notes_viewed'] >= self::MAX_NOTES_VIEW) {
+                $User = Config::getObject('core.user.class');
+                if (method_exists($User, 'logout')) {
+                    $User->logout();
+                }
+                unset($_SESSION['notes_viewed']);
+                $Url = Config::get('core.router.class');
+                $this->redirect($Url::link("homepage/index"));
+                return;
+            }
+
             $viewNotes = $Note->getById($_GET['id']);
             $this->view->addVar('viewNotes', $viewNotes);
             $this->view->render('note/view-item.php');
