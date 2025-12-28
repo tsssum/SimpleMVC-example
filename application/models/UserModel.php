@@ -141,4 +141,19 @@ class UserModel extends Model
         $this->role = $role;
     }
 
+    public function getAllActive(): array
+{
+    $sql = "SELECT * FROM users WHERE active = 1 ORDER BY login";
+    $st = $this->pdo->prepare($sql);
+    $st->execute();
+    
+    $list = [];
+    while ($row = $st->fetch()) {
+        $user = new UserModel($row);
+        $list[] = $user;
+    }
+    
+    return $list;
+}
+
 }

@@ -1,28 +1,5 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $title ?? 'SimpleMVC' ?></title>
-    <link rel="stylesheet" type="text/css" href="/style.css" />
-</head>
-<body>
-    <div id="container" id = "logo">
-        <a href="<?= \ItForFree\SimpleMVC\Router\WebRouter::link('articles/index') ?>">
-            <img id="logo" src="/images/logo.jpg" alt="Widget News" />
-        </a>
-        
-        <?= $CONTENT_DATA ?>
-        
-        <div id="footer">
-         Все права принадлежат всем. ;) 
-            <a href="<?= \ItForFree\SimpleMVC\Router\WebRouter::link('login/login') ?>">Site Admin</a>
-        </div>
-    </div>
-</body>
-</html>
-
-<style>	 
+/* Стили для body and внешнего контейнера */
+	 
 body {
   margin: 0;
   color: #333;
@@ -378,4 +355,3 @@ ul.ajax-load li {
     padding: 3px; /* Поля вокруг текста */
     font-size: 12px;
 }
-</style>

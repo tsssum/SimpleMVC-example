@@ -29,12 +29,6 @@ $User = Config::getObject('core.user.class');
         </div>
     </div>
     
-    <div class="alert alert-info">
-        <h6>Статистика просмотров:</h6>
-        <p>Вы просмотрели: <strong><?= $viewCount ?></strong> заметок из 5 доступных</p>
-        
-    </div>
-    
     <div class="mt-3">
         <a href="<?= WebRouter::link("notes/index") ?>" class="btn btn-secondary">
             ← Назад к списку заметок

@@ -25,9 +25,8 @@
     <h5>Выберите роль</h5>
     <select name="role">
         <option value="admin">Администратор</option>
-        <option value="auth_user" selected>Авторизованный пользователь</option>
         <option value="user">Пользователь</option>
-    </select><br>
+    </select><br><br>
     <input type="submit" class="btn btn-primary" name="saveNewUser" value="Сохранить">
     <input type="submit" class="btn" name="cancel" value="Назад">
 </form>

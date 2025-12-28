@@ -11,7 +11,7 @@ class AdminusersController extends \ItForFree\SimpleMVC\MVC\Controller
     
     public string $layoutPath = 'admin-main.php';
     
-    protected array $rules = [ //вариант 2:  здесь всё гибче, проще развивать в дальнешем
+    protected array $rules = [ 
          ['allow' => true, 'roles' => ['admin']],
          ['allow' => false, 'roles' => ['?', '@']],
     ];
@@ -68,7 +68,7 @@ class AdminusersController extends \ItForFree\SimpleMVC\MVC\Controller
         $id = $_GET['id'];
         $Url = Config::get('core.router.class');
         
-        if (!empty($_POST)) { // это выполняется нормально.
+        if (!empty($_POST)) {
             
             if (!empty($_POST['saveChanges'] )) {
                 $Adminusers = new UserModel();

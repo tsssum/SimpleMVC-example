@@ -14,14 +14,27 @@ $User = Config::getObject('core.user.class');
         <li class="nav-item ">
             <a class="nav-link" href="/">Главная</a>
         </li>
-        <?php  if ($User->isAllowed("login/login")): ?>
-        <li class="nav-item ">
-            <a class="nav-link" href="<?= WebRouter::link("login/login") ?>">[Вход]</a>
-        </li>
-        <?php endif; ?>
+        
         <?php  if ($User->isAllowed("admin/adminusers/index")): ?>
         <li class="nav-item ">
             <a class="nav-link" href="<?= WebRouter::link("admin/adminusers/index") ?>"> Пользователи </a>
+        </li>
+        <?php endif; ?>
+        <?php  if ($User->isAllowed("admin/categories/index")): ?>
+        <li class="nav-item ">
+            <a class="nav-link" href="<?= WebRouter::link("admin/categories/index") ?>">Категории</a>
+        </li>
+        <?php endif; ?>
+
+        <?php  if ($User->isAllowed("admin/subcategories/index")): ?>
+        <li class="nav-item ">
+        <a class="nav-link" href="<?= WebRouter::link("admin/subcategories/index") ?>">Подкатегории</a>
+        </li>
+        <?php endif; ?>
+        
+        <?php  if ($User->isAllowed("admin/articles/index")): ?>
+        <li class="nav-item ">
+            <a class="nav-link" href="<?= WebRouter::link("admin/articles/index") ?>">Статьи</a>
         </li>
         <?php endif; ?>
         

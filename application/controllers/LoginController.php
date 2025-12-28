@@ -17,8 +17,8 @@ class LoginController extends \ItForFree\SimpleMVC\MVC\Controller
     public $loginTitle = "Регистрация/Вход в систему";
     
     protected array $rules = [ 
-        ['allow' => true, 'roles' => ['?'], 'actions' => ['login']],
-        ['allow' => true, 'roles' => ['@'], 'actions' => ['logout']],
+    ['allow' => true, 'roles' => ['?', '@', 'admin'], 'actions' => ['login']],
+    ['allow' => true, 'roles' => ['@', 'admin'], 'actions' => ['logout']],
     ];
     
     /**
@@ -30,8 +30,10 @@ class LoginController extends \ItForFree\SimpleMVC\MVC\Controller
             $login = $_POST['userName'];
             $pass = $_POST['password'];
             $User = Config::getObject('core.user.class');
+
             if($User->login($login, $pass)) {
-                $this->redirect(WebRouter::link("homepage/index"));
+                if ($User->role === 'admin') { $this->redirect(WebRouter::link("admin/articles/index")); } 
+                else { $this->redirect(WebRouter::link("articles/index")); }
             unset($_SESSION['notes_viewed']);
             }
             else {

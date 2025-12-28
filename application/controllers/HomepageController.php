@@ -1,6 +1,7 @@
 <?php
 
 namespace application\controllers;
+use ItForFree\SimpleMVC\Router\WebRouter;
 
 /**
  * Контроллер для домашней страницы
@@ -17,13 +18,9 @@ class HomepageController extends \ItForFree\SimpleMVC\MVC\Controller
      */
     public string $layoutPath = 'main.php';
       
-    /**
-     * Выводит на экран страницу "Домашняя страница"
-     */
     public function indexAction()
     {
-        $this->view->addVar('homepageTitle', $this->homepageTitle); // передаём переменную по view
-        $this->view->render('homepage/index.php');
+        $this->redirect(WebRouter::link("articles/index"));
     }
 }
 

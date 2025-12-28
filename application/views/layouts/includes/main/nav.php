@@ -13,12 +13,7 @@ $User = Config::getObject('core.user.class');
     <ul class="navbar-nav">
         <li class="nav-item ">
             <a class="nav-link" href="/">Главная</a>
-        </li>
-        <?php  if ($User->isAllowed("login/login")): ?>
-        <li class="nav-item ">
-            <a class="nav-link" href="<?= WebRouter::link("login/login") ?>">[Вход]</a>
-        </li>
-        <?php endif; ?>
+        </li>        
         <?php  if ($User->isAllowed("admin/adminusers/index")): ?>
         <li class="nav-item ">
             <a class="nav-link" href="<?= WebRouter::link("admin/adminusers/index") ?>"> Пользователи </a>
